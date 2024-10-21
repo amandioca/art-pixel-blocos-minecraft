@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cubo Minecraft</title>
+</head>
+<style>
+    html,
+    body {
+        height: 100%;
+    }
+
+    .scene {
+        width: 100%;
+        height: 100%;
+        perspective: 800px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .cube {
+        cursor: pointer;
+        position: relative;
+        width: 200px;
+        height: 200px;
+        border: 1px solid #000;
+        transform-style: preserve-3d;
+        animation: rotation 10s infinite alternate;
+    }
+
+    @keyframes rotation {
+        0% {
+            transform: rotateY(0deg) rotateX(0deg);
+        }
+
+        100% {
+            transform: rotateY(720deg) rotateX(30deg);
+        }
+    }
+
+    .cube-face {
+        position: absolute;
+        width: 200px;
+        height: 200px;
+    }
+
+    #left {
+        background: red;
+        transform: translate(-100px) rotateY(90deg);
+    }
+
+    #right {
+        background: blue;
+        transform: translateX(100px) rotateY(90deg);
+    }
+
+    #top {
+        background: yellow;
+        transform: translateY(-100px) rotateX(90deg);
+    }
+
+    #bottom {
+        background: green;
+        transform: translateY(100px) rotateX(90deg);
+    }
+
+    #back {
+        background: orange;
+        transform: translateZ(-100px);
+    }
+
+    #front {
+        background: purple;
+        transform: translateZ(100px);
+    }
+</style>
+
+<body>
+    <div class="scene">
+        <div class="cube">
+            <div class="cube-face" id="left"></div>
+            <div class="cube-face" id="right"></div>
+            <div class="cube-face" id="top"></div>
+            <div class="cube-face" id="bottom"></div>
+            <div class="cube-face" id="back"></div>
+            <div class="cube-face" id="front"></div>
+        </div>
+    </div>
+</body>
+
+</html>
