@@ -7,9 +7,17 @@
     <title>Cubo Minecraft</title>
 </head>
 <style>
+    :root {
+        --size-pixel: 20px;
+        --qt-pixel: 16;
+        --total-size: calc(var(--size-pixel) * var(--qt-pixel));
+        --half-size: calc(var(--total-size)/2);
+    }
+
     html,
     body {
         height: 100%;
+        margin: 0;
     }
 
     .scene {
@@ -24,9 +32,8 @@
     .cube {
         cursor: pointer;
         position: relative;
-        width: 200px;
-        height: 200px;
-        border: 1px solid #000;
+        width: var(--total-size);
+        height: var(--total-size);
         transform-style: preserve-3d;
         animation: rotation 10s infinite alternate;
     }
@@ -37,56 +44,62 @@
         }
 
         100% {
-            transform: rotateY(720deg) rotateX(30deg);
+            transform: rotateY(720deg) rotateX(40deg);
         }
     }
 
     .cube-face {
         position: absolute;
-        width: 200px;
-        height: 200px;
+        width: var(--total-size);
+        height: var(--total-size);
     }
 
     #left {
-        background: red;
-        transform: translate(-100px) rotateY(90deg);
+        background-color: red;
+        transform: translate(calc(var(--half-size) * -1)) rotateY(90deg);
     }
 
     #right {
-        background: blue;
-        transform: translateX(100px) rotateY(90deg);
+        background-color: blue;
+        transform: translateX(var(--half-size)) rotateY(90deg);
     }
 
     #top {
-        background: yellow;
-        transform: translateY(-100px) rotateX(90deg);
+        background-color: yellow;
+        transform: translateY(calc(var(--half-size) * -1)) rotateX(90deg);
     }
 
     #bottom {
-        background: green;
-        transform: translateY(100px) rotateX(90deg);
+        background-color: green;
+        transform: translateY(var(--half-size)) rotateX(90deg);
     }
 
     #back {
-        background: orange;
-        transform: translateZ(-100px);
+        background-color: orange;
+        transform: translateZ(calc(var(--half-size) * -1));
     }
 
     #front {
-        background: purple;
-        transform: translateZ(100px);
+        background-color: purple;
+        transform: translateZ(var(--half-size));
     }
 </style>
 
 <body>
     <div class="scene">
         <div class="cube">
-            <div class="cube-face" id="left"></div>
-            <div class="cube-face" id="right"></div>
-            <div class="cube-face" id="top"></div>
-            <div class="cube-face" id="bottom"></div>
-            <div class="cube-face" id="back"></div>
-            <div class="cube-face" id="front"></div>
+            <div class="cube-face" id="left">
+            </div>
+            <div class="cube-face" id="right">
+            </div>
+            <div class="cube-face" id="top">
+            </div>
+            <div class="cube-face" id="bottom">
+            </div>
+            <div class="cube-face" id="back">
+            </div>
+            <div class="cube-face" id="front">
+            </div>
         </div>
     </div>
 </body>
