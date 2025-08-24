@@ -6,7 +6,7 @@ O cubo é renderizado em 3D e gira automaticamente para mostrar suas faces, **se
 <img width="1000" alt="imagem estática do bloco de grama do minecraft" src="https://github.com/user-attachments/assets/a1057a66-d96d-4002-893f-3e8dfc0f2588" />
 
 ## Como visualizar
-- [Acesse aqui](https://amandioca.github.io/art-pixel-cubo-minecraft/) para ver o cubo online no Github Pages.
+- [Acesse aqui](https://amandioca.github.io/art-pixel-blocos-minecraft/) para ver o cubo online no Github Pages.
 
 ## Funcionalidades
 - Cubo 3D feito com HTML e CSS
